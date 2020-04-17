@@ -53,6 +53,7 @@ jobs:
           
       - name: Generate configuration file
         run: |
+          cd lede
           rm -f ./.config*
           touch ./.config
           cat >> .config <<EOF
@@ -233,12 +234,14 @@ jobs:
       
       - name: Make download
         run: |
+          cd lede
           make download -j8
           find dl -size -1024c -exec rm -f {} \;
           df -h
           
       - name: Compile firmware
         run: |
+          cd lede
           make -j$(nproc) || make -j1 V=s
           echo "======================="
           echo "Space usage:"
@@ -250,18 +253,24 @@ jobs:
           du -h --max-depth=1 ./bin
           
       - name: Prepare artifact
-        run: find ./bin/targets/ -type d -name "packages" | xargs rm -rf {}
+        run: find ./lede/bin/targets/ -type d -name "packages" | xargs rm -rf {}
 
       - name: Upload firmware
         uses: actions/upload-artifact@master
         with:
           name: OpenWrt_firmware
-          path: ./bin/targets/
+          path: ./lede/bin/targets/
           
-      - name: Upload  IPK
+      - name: Upload IPK
         uses: actions/upload-artifact@master
         with:
           name: OpenWrtIPK
-          path: ./bin/packages/
+          path: ./lede/bin/packages/
+          
+      - name: Upload config
+        uses: actions/upload-artifact@master
+        with:
+          name: config
+          path: ./lede/.config
           
           
