@@ -39,10 +39,10 @@ jobs:
       - name: 自定义插件
         run: |
           git clone https://github.com/coolsnowwolf/lede
-          git clone https://github.com/XinSSS/luci-app-vssr-plus lede/package/luci-app-vssr-plus
+          git clone https://github.com/XinSSS/luci-app-vssr-plus lede/package/lean/luci-app-vssr-plus
           git clone https://github.com/vernesong/OpenClash
-          git clone https://github.com/frainzy1477/luci-app-clash lede/package/luci-app-clash
-          cp -R OpenClash/luci-app-openclash lede/package/luci-app-openclash
+          git clone https://github.com/frainzy1477/luci-app-clash lede/package/lean/luci-app-clash
+          cp -R OpenClash/luci-app-openclash lede/package/lean/luci-app-openclash
           cp -f feeds.conf.default lede/feeds.conf.default
           
       - name: Update feeds
