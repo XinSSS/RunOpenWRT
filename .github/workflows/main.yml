@@ -257,13 +257,13 @@ jobs:
       - name: Upload firmware
         uses: actions/upload-artifact@master
         with:
-          name: OpenWrt_firmware
+          name: OpenWrt_Firmware
           path: ./lede/bin/targets/
           
-      - name: Upload IPK
+      - name: Upload ipk
         uses: actions/upload-artifact@master
         with:
-          name: OpenWrtIPK
+          name: OpenWrt_IPK
           path: ./lede/bin/packages/
           
       - name: Upload config
