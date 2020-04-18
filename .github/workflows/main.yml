@@ -43,7 +43,7 @@ jobs:
           git clone https://github.com/vernesong/OpenClash
           # git clone https://github.com/frainzy1477/luci-app-clash lede/package/lean/luci-app-clash
           cp -R OpenClash/luci-app-openclash lede/package/lean/luci-app-openclash
-          cp -f feeds.conf.default lede/feeds.conf.default
+          cat feeds >> lede/feeds.conf.default
           
       - name: Update feeds
         run: |
