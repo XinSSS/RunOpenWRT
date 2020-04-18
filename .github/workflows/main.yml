@@ -36,12 +36,12 @@ jobs:
 
           df -h
           
-      - name: 自定义插件
+      - name: Git clone lede and plugins
         run: |
           git clone https://github.com/coolsnowwolf/lede
           git clone https://github.com/XinSSS/luci-app-vssr-plus lede/package/lean/luci-app-vssr-plus
           git clone https://github.com/vernesong/OpenClash
-          git clone https://github.com/frainzy1477/luci-app-clash lede/package/lean/luci-app-clash
+          # git clone https://github.com/frainzy1477/luci-app-clash lede/package/lean/luci-app-clash
           cp -R OpenClash/luci-app-openclash lede/package/lean/luci-app-openclash
           cp -f feeds.conf.default lede/feeds.conf.default
           
@@ -151,7 +151,7 @@ jobs:
           # CONFIG_PACKAGE_luci-app-accesscontrol is not set
           # CONFIG_PACKAGE_luci-app-airplay2 is not set
           # CONFIG_PACKAGE_luci-app-amule is not set
-          CONFIG_PACKAGE_luci-app-clash=y
+          # CONFIG_PACKAGE_luci-app-clash=y
           CONFIG_PACKAGE_luci-app-frpc=y
           # CONFIG_PACKAGE_luci-app-ipsec-vpnd is not set
           # CONFIG_PACKAGE_luci-app-music-remote-center is not set
