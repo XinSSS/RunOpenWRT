@@ -269,7 +269,7 @@ jobs:
       - name: Upload config
         uses: actions/upload-artifact@master
         with:
-          name: config
+          name: Config
           path: ./lede/.config
           
           
