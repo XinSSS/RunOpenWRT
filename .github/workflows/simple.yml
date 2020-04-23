@@ -86,6 +86,7 @@ jobs:
           # CONFIG_PACKAGE_ddns-scripts_dnspod is not set
           CONFIG_PACKAGE_dnscrypt-proxy-full=y
           CONFIG_PACKAGE_dnsforwarder=y
+          # CONFIG_PACKAGE_etherwake is not set
           # CONFIG_PACKAGE_fdk-aac is not set
           # CONFIG_PACKAGE_forked-daapd is not set
           CONFIG_PACKAGE_frpc=y
