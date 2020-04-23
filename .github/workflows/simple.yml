@@ -132,12 +132,14 @@ jobs:
           # CONFIG_PACKAGE_libgmp is not set
           # CONFIG_PACKAGE_libgnutls is not set
           # CONFIG_PACKAGE_libgpg-error is not set
+          # CONFIG_PACKAGE_libhttp-parser is not set
           CONFIG_PACKAGE_libltdl=y
           # CONFIG_PACKAGE_liblzo is not set
           CONFIG_PACKAGE_libmaxminddb=y
           # CONFIG_PACKAGE_libminiupnpc is not set
           # CONFIG_PACKAGE_libnatpmp is not set
           # CONFIG_PACKAGE_libnettle is not set
+          # CONFIG_PACKAGE_libnghttp2 is not set
           # CONFIG_PACKAGE_libopus is not set
           # CONFIG_PACKAGE_libpcre2-16 is not set
           # CONFIG_PACKAGE_libplist is not set
@@ -148,6 +150,7 @@ jobs:
           # CONFIG_PACKAGE_libsqlite3 is not set
           # CONFIG_PACKAGE_libunistring is not set
           # CONFIG_PACKAGE_libupnp is not set
+          # CONFIG_PACKAGE_libuv is not set
           # CONFIG_PACKAGE_libwebsockets-openssl is not set
           # CONFIG_PACKAGE_libwxbase is not set
           # CONFIG_PACKAGE_libxml2 is not set
@@ -182,6 +185,8 @@ jobs:
           CONFIG_PACKAGE_luci-theme-argon-light-mod=y
           CONFIG_PACKAGE_luci-theme-bootstrap-mod=y
           # CONFIG_PACKAGE_mxml is not set
+          # CONFIG_PACKAGE_node is not set
+          # CONFIG_PACKAGE_openssl-util is not set
           # CONFIG_PACKAGE_openvpn-easy-rsa is not set
           # CONFIG_PACKAGE_openvpn-openssl is not set
           CONFIG_PACKAGE_privoxy=y
@@ -239,20 +244,11 @@ jobs:
           CONFIG_PACKAGE_unzip=y
           # CONFIG_PACKAGE_vlmcsd is not set
           # CONFIG_PACKAGE_vsftpd-alt is not set
+          # CONFIG_PACKAGE_wsdd2 is not set
           # CONFIG_PACKAGE_zerotier is not set
           # CONFIG_UnblockNeteaseMusic_Go is not set
           # CONFIG_UnblockNeteaseMusic_NodeJS is not set
-          CONFIG_NODEJS_ICU_NONE=y
-          # CONFIG_NODEJS_ICU_SMALL is not set
-          # CONFIG_NODEJS_ICU_SYSTEM is not set
-          CONFIG_PACKAGE_etherwake=y
           CONFIG_PACKAGE_kmod-tun=y
-          CONFIG_PACKAGE_libhttp-parser=y
-          CONFIG_PACKAGE_libnghttp2=y
-          CONFIG_PACKAGE_libuv=y
-          CONFIG_PACKAGE_node=y
-          CONFIG_PACKAGE_openssl-util=y
-          CONFIG_PACKAGE_wsdd2=y
           EOF
           sed -i 's/^[ \t]*//g' ./.config
           make defconfig
