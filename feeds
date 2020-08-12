@@ -1,3 +1,4 @@
-src-git lienol https://github.com/XinSSS/lienol-openwrt-package
-src-git my https://github.com/XinSSS/diy
+src-git lienol https://github.com/Lienol/openwrt-package
+# src-git lienol https://github.com/XinSSS/lienol-openwrt-package
+# src-git my https://github.com/XinSSS/diy
 src-git helloworld https://github.com/fw876/helloworld
