@@ -39,8 +39,10 @@ jobs:
         run: |
           git clone https://github.com/coolsnowwolf/lede
           # git clone https://github.com/XinSSS/luci-app-vssr-plus lede/package/lean/luci-app-vssr-plus
-          git clone -b master https://github.com/vernesong/OpenClash
           # git clone https://github.com/frainzy1477/luci-app-clash lede/package/lean/luci-app-clash
+          git clone -b master https://github.com/vernesong/OpenClash
+          git clone https://github.com/jerrykuku/lua-maxminddb.git lede/package/lean/lua-maxminddb
+          git clone https://github.com/jerrykuku/luci-app-vssr.git lede/package/lean/luci-app-vssr
           cp -R OpenClash/luci-app-openclash lede/package/lean/luci-app-openclash
           cat feeds >> lede/feeds.conf.default
           
