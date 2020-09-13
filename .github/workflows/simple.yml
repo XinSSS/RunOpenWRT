@@ -44,6 +44,9 @@ jobs:
           git clone https://github.com/jerrykuku/lua-maxminddb.git lede/package/lean/lua-maxminddb
           git clone https://github.com/jerrykuku/luci-app-vssr.git lede/package/lean/luci-app-vssr
           cp -R OpenClash/luci-app-openclash lede/package/lean/luci-app-openclash
+          rm -rf lede/package/lean/luci-theme-argon
+          git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git lede/package/lean/luci-theme-argon
+          git clone https://github.com/jerrykuku/luci-app-argon-config.git lede/package/lean/luci-app-argon-config
           cat feeds >> lede/feeds.conf.default
           
       - name: Update feeds
