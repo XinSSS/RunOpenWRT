@@ -14,7 +14,7 @@ jobs:
   build_openwrt:
 
     name: Build OpenWrt and release
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
@@ -79,24 +79,31 @@ jobs:
           du -h --max-depth=1 ./bin
           
       - name: Prepare artifact
-        run: find ./lede/bin/targets/ -type d -name "packages" | xargs rm -rf {}
+        run: |
+          mkdir -p ./artifact/firmware
+          mkdir -p ./artifact/package
+          mkdir -p ./artifact/buildinfo
+          rm -rf $(find ./bin/targets/ -type d -name "packages")
+          cp -rf $(find ./bin/targets/ -type f) ./artifact/firmware/
+          cp -rf $(find ./bin/packages/ -type f -name "*.ipk") ./artifact/package/
+          cp -rf $(find ./bin/targets/ -type f -name "*.buildinfo" -o -name "*.manifest") ./artifact/buildinfo/
+          
+      - name: Deliver buildinfo
+        uses: actions/upload-artifact@v2
+        with:
+          name: OpenWrt_buildinfo
+          path: ./artifact/buildinfo/
 
-      - name: Upload firmware
-        uses: actions/upload-artifact@master
+      - name: Deliver package
+        uses: actions/upload-artifact@v2
         with:
-          name: OpenWrt_Simple_Firmware
-          path: ./lede/bin/targets/
-          
-      - name: Upload ipk
-        uses: actions/upload-artifact@master
+          name: OpenWrt_package
+          path: ./artifact/package/
+
+      - name: Deliver firmware
+        uses: actions/upload-artifact@v2
         with:
-          name: OpenWrt_Simple_IPK
-          path: ./lede/bin/packages/
-          
-      - name: Upload config
-        uses: actions/upload-artifact@master
-        with:
-          name: Simple_Config
-          path: ./lede/.config
+          name: OpenWrt_firmware
+          path: ./bin/targets/
           
           
