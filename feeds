@@ -1,3 +1,4 @@
-src-git xiaorouji https://github.com/xiaorouji/openwrt-passwall.git;main
+src-git passwall https://github.com/xiaorouji/openwrt-passwall
 src-git helloworld https://github.com/fw876/helloworld
 src-git jerryk https://github.com/jerrykuku/openwrt-package
+src-git OpenClash https://github.com/vernesong/OpenClash
