@@ -1,5 +1,5 @@
 src-git helloworld https://github.com/fw876/helloworld
-src-git jerryk https://github.com/jerrykuku/openwrt-package
+#src-git jerryk https://github.com/jerrykuku/openwrt-package
 src-git OpenClash https://github.com/vernesong/OpenClash
-src-git passwall_luci https://github.com/xiaorouji/openwrt-passwall;luci
-src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall;packages
+#src-git passwall_luci https://github.com/xiaorouji/openwrt-passwall;luci
+#src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall;packages
