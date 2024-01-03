@@ -41,12 +41,7 @@ jobs:
       - name: Git clone lede and plugins
         run: |
           git clone https://github.com/coolsnowwolf/lede
-          # git clone -b master https://github.com/vernesong/OpenClash
-          # cp -R OpenClash/luci-app-openclash lede/package/lean/luci-app-openclash
           cat feeds >> lede/feeds.conf.default
-          cd lede/package/lean/
-          git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git luci-theme-argon-18.06
-          git clone https://github.com/jerrykuku/luci-app-argon-config.git
           
       - name: Update feeds
         run: |
@@ -62,13 +57,10 @@ jobs:
           cat ../seed_simple.config > .config
           make defconfig
 
-      
       - name: Make download
         run: |
           cd lede
           make download -j8
-          find dl -size -1024c -exec rm -f {} \;
-          df -h
           
       - name: Compile firmware
         run: |
