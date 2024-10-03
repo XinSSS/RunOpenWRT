@@ -17,11 +17,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4.1.1
-        with:
-          ref: master
-          
       - name: Space cleanup and Initialization environment
         env:
           DEBIAN_FRONTEND: noninteractive
@@ -38,9 +33,24 @@ jobs:
           sudo -E apt clean
           sudo -E timedatectl set-timezone "Asia/Shanghai"
           
+      - name: Checkout
+        uses: actions/checkout@v4.1.1
+        with:
+          ref: master
+
+      - name: Cache and free disk space
+        uses: jlumbroso/free-disk-space@main
+        with:
+          tool-cache: true
+          android: true
+          dotnet: true
+          haskell: true
+          large-packages: true
+          swap-storage: true
+          
       - name: Git clone lede and plugins
         run: |
-          git clone https://github.com/coolsnowwolf/lede
+          git clone --depth=1 https://github.com/coolsnowwolf/lede
           cat feeds >> lede/feeds.conf.default
           
       - name: Update feeds
