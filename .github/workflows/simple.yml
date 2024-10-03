@@ -85,19 +85,19 @@ jobs:
           cp -rf $(find ./bin/targets/ -type f -name "*.buildinfo" -o -name "*.manifest") ./artifact/buildinfo/
 
       - name: Upload buildinfo
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: OpenWrt_buildinfo
           path: ./lede/artifact/buildinfo/
 
       - name: Upload package
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: OpenWrt_package
           path: ./lede/artifact/package/
 
       - name: Upload firmware
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: OpenWrt_firmware
           path: ./lede/bin/targets/
