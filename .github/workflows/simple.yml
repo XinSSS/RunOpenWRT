@@ -34,7 +34,7 @@ jobs:
           sudo -E timedatectl set-timezone "Asia/Shanghai"
           
       - name: Checkout
-        uses: actions/checkout@v4.1.1
+        uses: actions/checkout@v4
         with:
           ref: master
 
